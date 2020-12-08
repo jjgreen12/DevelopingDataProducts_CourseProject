@@ -1,0 +1,57 @@
+---
+title: "Time Value of Money App"
+author: "Josiah Green"
+date: "12/8/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Time Value of Money App
+
+Purpose: To help a user understand the time value of money.
+
+Objectives:
+
+ - Calculate the future value of an input present value
+ - Calculate the present value of a desired future value
+ - Enable the user to input many different scenarios to test the effects of compounding interest
+
+Output: The calculation of the present and future value of money given the desired future or starting present value, respectively.
+
+Outcome: All users to gain an appreciation for the time value of money in their personal finances.
+
+## FV Calculation example
+
+The future value of money is dependent on the initial principal, or present value (pv), of money the investor starts out with. This money is then compounded at some rate, often called the interest rate or discount rate (i). The interest rate is compounded over an investment horizon of years (t) and in some cases is also compounded each month or quarter within the year (n).
+
+```{r, echo = TRUE}
+pv = 500
+i = 0.1
+n = 12
+t = 40
+fv_output <- pv * (1 + (i/ n))^(n*t)
+fv_output
+```
+
+## PV Calculation example
+
+The present value, or starting value of money is dependent on some future investment objective (fv) the investor desires to end with, such as a nest egg or a mortgage on a house. The critical input here is the interest rate or discount rate (i) that can reasonably be obtained consistently over the investment horizon. The interest rate is compounded over an investment horizon of years (t) and in some cases is also compounded each month or quarter within the year (n).
+
+```{r, echo = TRUE}
+fv = 100000
+i = 0.1
+n = 12
+t = 40
+pv_output <- fv / (1 + (i / n))^(n*t)
+pv_output
+```
+
+## Thank you
+
+I hope you enjoy the app!
+
+References:
+- https://corporatefinanceinstitute.com/resources/knowledge/valuation/time-value-of-money/
